@@ -38,12 +38,12 @@ export class Tile
 export class GameView
 {
     constructor(state)
-{
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    this.board = [new Array(d), new Array(d), new Array(d)]
-    for(let i = 0; i < d; i++)
     {
-        for(let j = 0; j < d; j++)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.board = [new Array(d), new Array(d), new Array(d)]
+        for(let i = 0; i < d; i++)
+        {
+            for(let j = 0; j < d; j++)
             {
             this.board[i][j] = new Tile(i, j, state[i][j])
             this.board[i][j].draw()
@@ -56,5 +56,5 @@ export function clickToTail(x, y)
 {
     const j = Math.floor(x / tileWidth)
     const i = Math.floor(y / tileWidth)
-return [i,j]
+    return [i,j]
 }
